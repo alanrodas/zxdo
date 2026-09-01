@@ -1,0 +1,68 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.11/schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "ignoreUnknown": true },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "style": {
+        "useNodejsImportProtocol": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "none",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
+  },
+  "html": {
+    "formatter": {
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "overrides": [
+    { "includes": ["*.js", "**/*.js", "*.jsx", "**/*.jsx"] },
+    { "includes": ["*.ts", "**/*.ts", "*.tsx", "**/*.tsx"] },
+    { "includes": ["*.yml", "**/*.yml", "*.yaml", "**/*.yaml"] },
+    { "includes": ["*.json", "**/*.json"] },
+    { "includes": ["*.md", "**/*.md"] },
+    {
+      "includes": ["*.css", "**/*.css", "*.scss", "**/*.scss", "*.less", "**/*.less"]
+    },
+    { "includes": ["*.html", "**/*.html"] },
+    { "includes": ["package.json"], "formatter": { "indentWidth": 2 } },
+    {
+      "includes": ["**/package-definition.json"],
+      "formatter": { "indentWidth": 2 }
+    },
+    { "includes": [".prettierrc"] },
+    { "includes": [".czrc"] }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": { "source": { "organizeImports": "on" } }
+  }
+}

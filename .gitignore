@@ -1,0 +1,39 @@
+# OS generated files #
+.DS_Store
+*.pem
+Thumbs.db
+.tmp/
+
+# IDE generated file #
+/.idea
+
+# PackageManager specific lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Node generated files
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Build process generated files
+.rollup.cache
+*.tsbuildinfo
+tsconfig.build.json
+
+# Test coverage generated folder
+/coverage
+
+# Dist generated folder
+/dist
+/build
+.next
+
+# Docs generated folder
+docs/
+scripts/

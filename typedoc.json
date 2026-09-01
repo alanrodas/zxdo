@@ -1,0 +1,16 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "zxdo",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "cleanOutputDir": true,
+  "externalSymbolLinkMappings": {
+    "@types/node": {
+      "Stream.Writable.write": "#",
+      "Stream.Writable.end": "#"
+    }
+  }
+}
