@@ -1,7 +1,8 @@
 {
   "name": "@alanrodas/zxdo",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple task runner built around Google's ZX",
+  "repository": "https://github.com/alanrodas/zxdo",
   "license": "MIT",
   "author": "Alan Rodas Bonjour <alanrodas@gmail.com>",
   "main": "./dist/index.js",
@@ -9,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "bin": {
-    "zxdo": "./dist/bin.js"
+    "zxdo": "dist/bin.js"
   },
   "exports": {
     ".": {

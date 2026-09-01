@@ -1,44 +1,44 @@
 name: on-tag-publish-docs
 
 on:
-    push:
-        tags:
-            - 'v*'
-    workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
 
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-    group: 'pages'
-    cancel-in-progress: false
+  group: 'pages'
+  cancel-in-progress: false
 
 jobs:
-    publish-docs:
-        name: Build the docs and publish to GitHub Pages
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v7
-            - name: Setup node version
-              uses: actions/setup-node@v7
-              with:
-                  node-version: '26'
-            - name: Install project dependencies
-              run: npm install
-            - name: Build the docs
-              run: npm run doc
-            - name: Setup Pages
-              uses: actions/configure-pages@v4
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: './docs'
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+  publish-docs:
+    name: Build the docs and publish to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Setup node version
+        uses: actions/setup-node@v7
+        with:
+          node-version: '26'
+      - name: Install project dependencies
+        run: npm install
+      - name: Build the docs
+        run: npm run doc
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
